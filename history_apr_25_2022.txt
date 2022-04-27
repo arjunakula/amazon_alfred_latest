@@ -1,0 +1,953 @@
+    1  ls
+    2  cd ..
+    3  ls
+    4  vim vocab_tiny.json 
+    5  vim vocab_medium.json 
+    6  ls
+    7  cd ..
+    8  ls
+    9  cd vr/
+   10  ls
+   11  vim film.
+   12  ls
+   13  cd models/
+   14  ls
+   15  cd ..
+   16  cd ../scripts/
+   17  ls
+   18  vim fil
+   19  ls
+   20  cd train/
+   21  vim film
+   22  ls
+   23  vim film.sh 
+   24  cd ..
+   25  ls
+   26  bash scripts/train_tiny.sh 
+   27  ls
+   28  python scripts/run_model.py     --program_generator data/film.pt
+   29  python scripts/run_model.py     --program_generator data/film.pt  --execution_engine data/film.pt
+   30  python scripts/run_model.py     --program_generator data/film.pt  --execution_engine data/film.pt --vocab_json data/vocab.json
+   31  python scripts/run_model.py     --program_generator data/film.pt  --execution_engine data/film.pt --vocab_json data/vocab_tiny.json
+   32  source /home/arjunakula/anaconda3/bin/activate
+   33  conda activate mmf
+   34  cd data/
+   35  ls
+   36  cd medium_dataset/
+   37  ls
+   38  cd ..
+   39  ls
+   40  cd clevr_ref+_1.0/
+   41  ls
+   42  cd refexps/
+   43  ls
+   44  cd ../..
+   45  ;s
+   46  cd .
+   47  ls
+   48  cd ..
+   49  ls
+   50  cd notebooks/
+   51  ls
+   52  jupyter notebook
+   53  ls
+   54  cp create_singleObject_split_for_CLEVR-ref+.ipynb /home/arjunakula/Dropbox/My_UCLA_docs_from_2016_sept/PhD_Research/after_summer_2019/EMNLP2020_Mila_mygithub/NLVR2_film/film/notebooks/
+   55  source /home/arjunakula/anaconda3/bin/activate
+   56  conda activate pytorch0.1.11
+   57  /home/arjunakula/anaconda3/envs/pytorch0.1.11/bin/python /home/arjunakula/Dropbox/My_UCLA_docs_from_2016_sept/PhD_Research/after_summer_2019/EMNLP2020_Mila_mygithub/NLVR2_film/film/scripts/train_model_tiny.py
+   58  source /home/arjunakula/anaconda3/bin/activate
+   59  conda activate pytorch0.1.11
+   60  python scripts/run_model.py     --program_generator data/film.pt
+   61  sh scripts/test_model_tiny.sh 
+   62  cd data/
+   63  ls
+   64  cd ..
+   65  ls
+   66  ld
+   67  ls
+   68  cd ..
+   69  ls
+   70  cd film/
+   71  ls
+   72  git remote add origin https://github.com/arjunakula/film_cnmn.git
+   73  ls -a
+   74  git init
+   75  git remote add origin https://github.com/arjunakula/film_cnmn.git
+   76  ls
+   77  ls -a
+   78  rm .git
+   79  rm .git -rf
+   80  git init
+   81  git remote add origin https://github.com/arjunakula/film_cnmn.git
+   82  git branch -M main
+   83  git push -u origin main
+   84  ls
+   85  ls -a
+   86  rm -rf .git
+   87  ls
+   88  cd notebooks/
+   89  ls -a
+   90  cd ..
+   91  ls
+   92  cd data/
+   93  ls -a
+   94  cd ..
+   95  ls
+   96  cd scripts/
+   97  ls -a
+   98  cd ..
+   99  ls
+  100  cd vr
+  101  ls -a
+  102  cd models/
+  103  ls -a
+  104  cd ../..
+  105  ls
+  106  pwd
+  107  ls
+  108  python setup.py build_ext --inplace
+  109  cd google_refexp_
+  110  cd google_refexp_py_lib/
+  111  ls
+  112  python setup.py build_ext --inplace
+  113  cd ..
+  114  ls
+  115  cd ..
+  116  cdG
+  117  cd Google_Refexp_toolbox/
+  118  python setup.py
+  119  python2 setup.py
+  120  cd ..
+  121  ls
+  122  mkdir tmp
+  123  ls
+  124  cd tmp/
+  125  ls
+  126  git clone https://github.com/volkancirik/groundnet.git
+  127  ls
+  128  cd groundnet/
+  129  ls
+  130  cd Google_Refexp_toolbox/ls
+  131  cd Google_Refexp_toolbox/
+  132  lss
+  133  ls
+  134  cd external/
+  135  ls
+  136  cd ..
+  137  python setup.py
+  138  p2ython setup.py
+  139  python2 setup.py
+  140  cd external/coco/
+  141  ls
+  142  cd PythonAPI/
+  143  make
+  144  ls
+  145  cd ..
+  146  ls
+  147  cd ..
+  148  ls
+  149  cd ..
+  150  ls
+  151  pwd
+  152  cd
+  153  cd Documents/
+  154  mkdir tmp
+  155  cd tmp/
+  156  ks
+  157  ls
+  158  git clone https://github.com/aws/aws-refcocog-adv.git
+  159  git checkout -b simpler_format_with_adv_easy_and_hard_splits
+  160  git remote add upstream https://github.com/aws/aws-refcocog-adv.git
+  161  ls
+  162  cd aws-refcocog-adv/
+  163  ls
+  164  cp ../../aws-refcocog-adv/adv_easy_hard_annotations.json .
+  165  cp ../../aws-refcocog-adv/data_demo-new.ipynb .
+  166  ls
+  167  git status
+  168  git commit -m "Adding simpler formats to read adv, easy and hard annotations"
+  169  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  170  git commit -S -m "Adding simpler formats to read adv, easy and hard annotations"
+  171  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  172  cd ..
+  173  rm -rf aws-refcocog-adv/
+  174  ls
+  175  git clone https://github.com/arjunakula/aws-refcocog-adv.git
+  176  git checkout -b simpler_format_with_adv_easy_and_hard_splits
+  177  git remote add upstream https://github.com/aws/aws-refcocog-adv.git
+  178  cd aws-refcocog-adv/
+  179  cp ../../aws-refcocog-adv/adv_easy_hard_annotations.json .
+  180  cp ../../aws-refcocog-adv/data_demo-new.ipynb .
+  181  ls
+  182  git commit -m "Adding simpler formats to read adv, easy and hard annotations"
+  183  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  184  git config credential.helper store
+  185  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  186  ls
+  187  git commit -m "Adding simpler formats to read adv, easy and hard annotations"
+  188  git add *
+  189  git commit -m "Adding simpler formats to read adv, easy and hard annotations"
+  190  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  191  git commit -S -m "Adding simpler formats to read adv, easy and hard annotations"
+  192  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  193  git checkout -b simpler_format_with_adv_easy_and_hard_splits
+  194  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  195  cp ../../aws-refcocog-adv/adv_easy_hard_annotations.json .
+  196  cp ../../aws-refcocog-adv/helper_notebook.ipynb .
+  197  git add *
+  198  git checkout -b simpler_format_with_adv_easy_and_hard_splits
+  199  git commit -S -m "Adding simpler formats to read adv, easy and hard annotations"
+  200  git commit -S -m "Adding simpler formats to read adv, easy and hard annotations 2"
+  201  git status
+  202  git commit  -m "Adding simpler formats to read adv, easy and hard annotations 2"
+  203  git push -u origin simpler_format_with_adv_easy_and_hard_splits
+  204  cd
+  205  ls
+  206  cd Documents/
+  207  ls
+  208  passwd
+  209  ls
+  210  cd Documents/
+  211  ls
+  212  cd ..
+  213  s
+  214  ls
+  215  cd Downloads
+  216  ls
+  217  cd ..
+  218  ls
+  219  cd Dropbox
+  220  ls
+  221  cd My_UCLA_docs_from_2016_sept/
+  222  ls
+  223  cd PhD_Research/
+  224  ls
+  225  cd after_summer_2019/
+  226  ;s
+  227  ls
+  228  cd Amazon2021_Summer/
+  229  ls
+  230  cd alfred
+  231  ls
+  232  cd data/
+  233  ls
+  234  cd full_2.1.0/
+  235  ls
+  236  cd tests_unseen/
+  237  ls
+  238  cd trial_T20190909_113743_603978/
+  239  ls
+  240  vim traj_data.json 
+  241  cd ..
+  242  ;s
+  243  ls
+  244  cd tests_unseen/
+  245  ls
+  246  cd ..
+  247  ls
+  248  cd json_feat_2.1.0/
+  249  ls
+  250  cd tests_unseen/
+  251  ls
+  252  cd trial_T20190909_113743_603978
+  253  ls
+  254  vim traj_data.json 
+  255  cd ../..
+  256  ls
+  257  cd ..
+  258  ls
+  259  cd ..
+  260  ls
+  261  cd splits/
+  262  ls
+  263  vim oct21.json 
+  264  cd ..
+  265  ls
+  266  cd ..
+  267  ls
+  268  cd ..
+  269  ls
+  270  cd alfred_env/
+  271  ls
+  272  cd ..
+  273  ls
+  274  cd moca
+  275  ls
+  276  cd moca/
+  277  ls
+  278  cd data/
+  279  ls
+  280  cd ..
+  281  ls
+  282  cd moca_env/
+  283  ls
+  284  cd ..
+  285  ls
+  286  cd ..
+  287  ls
+  288  cd ...
+  289  cd ..
+  290  ls
+  291  cd alfred
+  292  ls
+  293  cd media/
+  294  ls
+  295  cd ..
+  296  ls
+  297  cd scripts/
+  298  s
+  299  ls
+  300  cd ..
+  301  ls
+  302  cd env/
+  303  ls
+  304  cd ..
+  305  ls
+  306  cd exp
+  307  ls
+  308  cd ..
+  309  ls
+  310  cd gen
+  311  ls
+  312  cd utils/
+  313  ls
+  314  vim dataset_management_util.py 
+  315  ls
+  316  cd ,,
+  317  ls
+  318  cd ..
+  319  ;s
+  320  ls
+  321  cd scripts/
+  322  ls
+  323  vim generate_trajectories.py 
+  324  ld
+  325  ls
+  326  cd ..
+  327  ls
+  328  cd ..
+  329  ls
+  330  cd Desktop/ccref_examples/
+  331  ls
+  332  vim ~/.config/code-server/config.yaml
+  333  cd ..
+  334  cd ../ngrok-stable-linux-amd64/
+  335  ;s
+  336  ls
+  337  ./ngrok https http://127.0.0.1:8080
+  338  ./ngrok http http://127.0.0.1:8080
+  339  cd ../Downloads
+  340  ls
+  341  cd code-server-3.12.0-linux-amd64/
+  342  ls
+  343  ./ngrok 
+  344  cd bin/
+  345  ls
+  346  ./code-server `
+  347  ./code-server 
+  348  cd ..
+  349  ./bin/code-server 
+  350  cd ..
+  351  rm -rf code-server-3.12.0-linux-amd64*
+  352  ls
+  353  git clone -r https://github.com/coder/code-server.git
+  354  git clone -R https://github.com/coder/code-server.git
+  355  git clone https://github.com/coder/code-server.git
+  356  curl -fsSL https://code-server.dev/install.sh | sh
+  357  code-server
+  358  sed -i.bak 's/auth: password/auth: none/' ~/.config/code-server/config.yaml
+  359  sudo systemctl restart code-server@$USER
+  360  code-server
+  361  ps -elf
+  362  ps -ef
+  363  kill -9 18323
+  364  ps -ef
+  365  kill -9 18369
+  366  ps -ef
+  367  kill -9 18211
+  368  ps -ef
+  369  kill -9 18438
+  370  ps -ef
+  371  kill -9 18492
+  372  ps -ef
+  373  kill -9 18508
+  374  ps -ef
+  375  kill -9 18542
+  376  ps -ef
+  377  vim ~/.config/code-server/config.yaml
+  378  cd Documents/
+  379  ls
+  380  cd amazon_alfred/
+  381  ls
+  382  df
+  383  du -sh
+  384  cd
+  385  df -sh
+  386  df -h
+  387  ls
+  388  cd backup_Dropbox_1
+  389  ls
+  390  cd project1/
+  391  ls
+  392  cd ..
+  393  cd My_UCLA_docs_from_2016_sept/
+  394  ls
+  395  cd PhD_Research/
+  396  ls
+  397  cd after_
+  398  s
+  399  cd after_Feb8_2019/
+  400  ls
+  401  cd XAI_darpa/
+  402  ls
+  403  cd ..
+  404  ls
+  405  cd NeurIPS_FaultLine_2019/
+  406  ls
+  407  cd data/
+  408  ls
+  409  cd ..
+  410  ls
+  411  cd results/
+  412  s
+  413  ls
+  414  cd ..
+  415  ls
+  416  cd data/
+  417  ls
+  418  cd ../..
+  419  ls
+  420  cd after_
+  421  lss
+  422  cd after_summer_2019/
+  423  ls
+  424  cd Amazon_Internship_Backup_Summer2019/
+  425  ls
+  426  cd ../..
+  427  ls
+  428  cd ..
+  429  rm -rf backup_Dropbox_1
+  430  ls
+  431  df -h
+  432  ls
+  433  du -h *
+  434  du -h
+  435  df -h
+  436  ls
+  437  ls -lh
+  438  cd Do
+  439  cd Documents/
+  440  ls
+  441  rm -rf ViLBERT/
+  442  cd tmp/
+  443  ls
+  444  cd ..
+  445  rm -rf tm
+  446  cd cocox2/
+  447  ls
+  448  rm -rf cocox2
+  449  ;d
+  450  ls
+  451  cd ..
+  452  rm -rf cocox2
+  453  ls
+  454  cd ..
+  455  ls
+  456  cd Dropbox
+  457  ls
+  458  cd ..
+  459  sudo apt-get remove dropbox 
+  460  ls
+  461  rm -rf Dropbox
+  462  ls
+  463  df -h
+  464  ls
+  465  cd Desktop/
+  466  ls
+  467  cd ..
+  468  ls
+  469  cd Videos/
+  470  ls
+  471  cd ..
+  472  cd Music/
+  473  ls
+  474  cd ..
+  475  cd Documents/
+  476  ls
+  477  ls -lh
+  478  cd acl_images/
+  479  ls
+  480  cd ..
+  481  rm -rf acl_images/
+  482  ls
+  483  cd catr/
+  484  ls
+  485  cd ..
+  486  ls
+  487  cd amazon_alfred/
+  488  ls
+  489  cd ..
+  490  ls
+  491  wget https://github.com/coder/code-server/releases/download/v4.2.0/code-server-4.2.0-linux-amd64.tar.gz
+  492  tar -xvf code-server-4.2.0-linux-amd64.tar.gz 
+  493  ls
+  494  cd code-server-4.2.0-linux-amd64/
+  495  ls
+  496  cd bin/
+  497  ;s
+  498  ls
+  499  ./code-server 
+  500  sudo reboot
+  501  sudo apt-get remove chrome
+  502  cd ..
+  503  ls
+  504  mkdir amazon_alfred_latest
+  505  cd amazon_alfred
+  506  git clone https://github.com/alexpashevich/E.T..git
+  507  ls
+  508  cd E.T./
+  509  ls
+  510  cd ..
+  511  cd amazon_alfred_a
+  512  cd amazon_alfred_latest/
+  513  ls
+  514  git clone https://github.com/alexpashevich/E.T..git
+  515  ls
+  516  cd E.T./
+  517  ls
+  518  git init -b main
+  519  git init main
+  520  git add . && git commit -m "initial commit"
+  521  gh repo create
+  522  git remote add origin https://github.com/arjunakula/amazon_alfred_latest.git
+  523  ls
+  524  ls -a
+  525  rm .git/
+  526  rm .git/ -r
+  527  rm .git/ -rf
+  528  ls
+  529  ls -a
+  530  git remote add origin https://github.com/arjunakula/amazon_alfred_latest.git
+  531  cd ..
+  532  ls
+  533  rm -rf E.T./
+  534  ls
+  535  cd ..
+  536  ls
+  537  git clone https://github.com/alexpashevich/E.T..git
+  538  cd E.T./
+  539  ls
+  540  ls -a
+  541  cd alfred/
+  542  ls
+  543  cd ..
+  544  ls
+  545  cd ..
+  546  cd amazon_alfred_latest/
+  547  ls
+  548  git remote add origin https://github.com/arjunakula/amazon_alfred_latest.git
+  549  cd ..
+  550  rm -rf amazon_alfred_latest/
+  551  ls
+  552  git
+  553  git clone https://github.com/arjunakula/amazon_alfred_latest.git
+  554  \cd amazon_alfred
+  555  ls
+  556  cd ..
+  557  cd amazon_alfred_latest/
+  558  ls
+  559  ls -a
+  560  echo "# amazon_alfred_latest" >> README.md
+  561  git init
+  562  git add README.md
+  563  git commit -m "first commit"
+  564  git branch -M main
+  565  git remote add origin https://github.com/arjunakula/amazon_alfred_latest.git
+  566  git push -u origin main
+  567  eval "$(ssh-agent -s)"
+  568  cat ~/.ssh/id_ed25519.pub
+  569  git remote add origin https://github.com/arjunakula/amazon_alfred_latest.git
+  570  git push -u origin main
+  571  git config --global --list
+  572  ls
+  573  cd ..
+  574  rm -rf amazon_alfred_latest/
+  575  mkdir amazon_alfred_latest
+  576  rm -rf amazon_alfred_latest/
+  577  git clone https://github.com/arjunakula/amazon_alfred_latest.git
+  578  cd amazon_alfred_latest/
+  579  ls
+  580  git init
+  581  git remote add origin git@gitlab.com:akula.arjun@gmail.com/https://github.com/arjunakula/amazon_alfred_latest.git
+  582  cd ..
+  583  rm -rf amazon_alfred_latest/
+  584  mkdir amazon_alfred_latest
+  585  rm -rf amazon_alfred_latest/
+  586  git clone https://github.com/arjunakula/amazon_alfred_latest.git
+  587  cd amazon_alfred_latest/
+  588  ls
+  589  git status
+  590  git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+  591  vim new.txt
+  592  git add *
+  593  git status
+  594  git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+  595  git push origin main
+  596  ls
+  597  git pull
+  598  ls
+  599  git add *
+  600  git commit -m "latest commit"
+  601  git push origin main
+  602  sudo apt-get install xorg openbox
+  603  ls
+  604  vim startx.py
+  605  sudo python scripts/startx.py 0
+  606  ls
+  607  mkdir scripts
+  608  mv startx.py scripts/
+  609  sudo python scripts/startx.py 0
+  610  rm -rf /tmp/.X0-lock
+  611  sudo rm -rf /tmp/.X0-lock
+  612  sudo python scripts/startx.py 0
+  613  cd alfred/
+  614  ls
+  615  cd ../
+  616  ls
+  617  conda info --envs
+  618  cd .
+  619  cd ..
+  620  lsd
+  621  ls
+  622  git clone https://github.com/askforalfred/alfred.git alfred
+  623  vim ~/.bashrc
+  624  cd alfred/
+  625  export ALFRED_ROOT=$(pwd)/alfred
+  626  virtualenv -p $(which python3) --system-site-packages alfred_env_latest
+  627  source alfred_env_latest/bin/activate
+  628  cd $ALFRED_ROOT
+  629  cd ..
+  630  export ALFRED_ROOT=$(pwd)/alfred
+  631  pip install --upgrade pip
+  632  pip install -r requirements.txt
+  633  ls
+  634  cd $ALFRED_ROOT/data
+  635  sh download_data.sh json_feat
+  636  ls
+  637  cd ..
+  638  ls
+  639  sudo python scripts/startx.py 0
+  640  sudo python scripts/startx.py 1
+  641  tmux
+  642  pwd
+  643  cd ../amazon_alfred_latest/
+  644  ls
+  645  pwd
+  646  conda info --envs
+  647  conda deactivate
+  648  vim ~/.bashrc
+  649  conda list --envs
+  650  conda --list envs
+  651  conda list env
+  652  conda list --env
+  653  conda info --envs
+  654  conda activate alfred_conda_env
+  655  which anoconda3
+  656  which anaconda
+  657  which alfred_conda_env
+  658  which conda
+  659  cd /home/arjunakula/anaconda3/envs/alfred_conda_env/bin/
+  660  ls
+  661  source alfred_env/bin/activate
+  662  cd
+  663  conda create -n pytorch1.1.0 python=3
+  664  conda create -n alfred_conda_env python=3
+  665  conda activate alfred_conda_env
+  666  cd Documents/amazon_alfred_latest/
+  667  ls
+  668  cd ../alfred/
+  669  ls
+  670  conda install --file requirements.txt 
+  671  conda install pytorch=1.1.0 h5py tqdm scipy pillow matplotlib scikit-image nltk
+  672  vim requirements.txt 
+  673  conda install -c conda-forge ipython jupyter ipywidgets
+  674  python -m ipykernel install --user --name=alfred_conda_env
+  675  conda install numpy pandas
+  676  conda install opencv-python
+  677  conda install opencv
+  678  conda install networkx h5py tqdm vocab
+  679  conda install networkx h5py tqdm
+  680  conda install install git+https://github.com/vzhong/vocab.git
+  681  conda install git+https://github.com/vzhong/vocab.git
+  682  pip install git+https://github.com/vzhong/vocab.git
+  683  conda install revtok
+  684  pip install revtok
+  685  conda install Pillow
+  686  conda install torchvision==0.3.0
+  687  conda install tensorboardX==1.8
+  688  pip install tensorboardX==1.8
+  689  conda install ai2thor==2.1.0
+  690  conda install ai2thor=2.1.0
+  691  pip install ai2thor==2.1.0
+  692  cd ..
+  693  cd
+  694  ls
+  695  cd Documents/
+  696  ls
+  697  git clone https://github.com/rycolab/aclpub2/
+  698  git clone git@github.com:acl-2022/Insights.git
+  699  cd aclpub2/.
+  700  sudo pip3 install -r requirements.txt
+  701  export PYTHONPATH=.:$PYTHONPATH
+  702  ./bin/generate ../Insights --proceedings --overwrite
+  703  sudo pip3 install -r requirements.txt
+  704  ./bin/generate ../Insights --proceedings --overwrite
+  705  vim requirements
+  706  ls
+  707  vim requirements-dev.txt 
+  708  vim requirements.txt 
+  709  pip3 install PyPDF2==1.26.0
+  710  vim requirements.txt 
+  711  pip3 install roman==3.3
+  712  vim requirements.t
+  713  vim requirements.txt 
+  714  pip3 install PyYAML==5.3.1
+  715  vim requirements.txt 
+  716  pip3 install Jinja2==3.0.2
+  717  ls
+  718  ./bin/generate ../Insights --proceedings --overwrite
+  719  pip3 install PyPDF2
+  720  ./bin/generate ../Insights --proceedings --overwrite
+  721  pip install PyPDF2
+  722  sudo pip install -r requirements.txt
+  723  ./bin/generate ../Insights --proceedings --overwrite
+  724  pip install roman
+  725  ./bin/generate ../Insights --proceedings --overwrite
+  726  ls
+  727  cd aclpub2/
+  728  ls
+  729  cd ..
+  730  export PYTHONPATH=.:$PYTHONPATH
+  731  ./bin/generate ../Insights --proceedings --overwrite
+  732  cd ..
+  733  ls
+  734  cd Insights/
+  735  ls
+  736  cd p
+  737  cd papers/
+  738  ls
+  739  cd ..
+  740  ls
+  741  cd -
+  742  ls
+  743  cd ../aclpub2/
+  744  ;s
+  745  ls
+  746  cd bin/
+  747  ls
+  748  cd ..
+  749  ls
+  750  cd ..
+  751  rm -tf aclpub2/ Insights/
+  752  rm -rf aclpub2/ Insights/
+  753  ls
+  754  git clone https://github.com/rycolab/aclpub2/
+  755  git clone git@github.com:acl-2022/Insights.git
+  756  cd i
+  757  cd Insights/
+  758  ls
+  759  cd papers/
+  760  ls
+  761  cd ..
+  762  ls
+  763  vim papers
+  764  cd ..
+  765  ;ls
+  766  ls
+  767  cd aclpub2/
+  768  ;s
+  769  ls
+  770  cd ..
+  771  cd Insights/
+  772  ls
+  773  vim papers.yml 
+  774  vim organizing_committee.yml 
+  775  vim invited_talks
+  776  cd ..
+  777  cd aclpub2/
+  778  sudo pip3 install -r requirements.txt
+  779  sudo pip install -r requirements.txt
+  780  export PYTHONPATH=.:$PYTHONPATH
+  781  ./bin/generate ../Insights --proceedings --overwrite
+  782  cd aclpub2/
+  783  vim generate.py 
+  784  cd ../../Insights/
+  785  ls
+  786  vim papers
+  787  ls
+  788  cd ../aclpub2/
+  789  l;s
+  790  cd b
+  791  cd bin/
+  792  ls
+  793  cd ..
+  794  ls
+  795  cd ../Insights/
+  796  ;ls
+  797  ls
+  798  cd p
+  799  cd papers/
+  800  ls
+  801  :Q
+  802  ls
+  803  cd ..
+  804  ls
+  805  vim papers.yml 
+  806  ls
+  807  cd papers/
+  808  ls
+  809  nautilus .
+  810  vim papers.yml 
+  811  cd ..
+  812  vim papers.yml 
+  813  mv papers.yml papers2.yml 
+  814  vim papers.
+  815  vim papers.y
+  816  vim papers.ym
+  817  cp papers2.yml papers.yml
+  818  vim papers.yml 
+  819  cd ..
+  820  cd aclpub2/
+  821  ./bin/generate ../Insights --proceedings --overwrite
+  822  cd ,,
+  823  ls
+  824  cd ..
+  825  ls
+  826  cd Insights/
+  827  ;s
+  828  ls
+  829  cd ..
+  830  rm -rf Insights/
+  831  Bgit clone git@github.com:acl-2022/Insights.git
+  832  git clone git@github.com:acl-2022/Insights.git
+  833  cd Insights/
+  834  cd p
+  835  ls
+  836  cd ..
+  837  rm -rf Insights/
+  838  git clone git@github.com:acl-2022/Insights.git
+  839  cd aclpub2/
+  840  ./bin/generate ../Insights --proceedings --overwrite
+  841  cd ..
+  842  rm -rf Insights/
+  843  ./bin/generate ../Insights --proceedings --overwrite
+  844  git clone git@github.com:acl-2022/Insights.git
+  845  cd Insights/
+  846  cd ../aclpub2/
+  847  ./bin/generate ../Insights --proceedings --overwrite
+  848  cd ..
+  849  rm -rf Insights/
+  850  git clone git@github.com:acl-2022/Insights.git
+  851  cd aclpub2/
+  852  ./bin/generate ../Insights --proceedings --overwrite
+  853  cd ..
+  854  rm -rf Insights/
+  855  git clone git@github.com:acl-2022/Insights.git
+  856  cd aclpub2/
+  857  ./bin/generate ../Insights --proceedings --overwrite
+  858  cd ..
+  859  rm -rf Insights/
+  860  git clone git@github.com:acl-2022/Insights.git
+  861  cd aclpub2/
+  862  ./bin/generate ../Insights --proceedings --overwrite
+  863  sudo pip3 install -r requirements.txt
+  864  sudo pip2 install -r requirements.txt
+  865  cd /home/arjunakula/
+  866  ls .cache
+  867  rm -rf .cache/
+  868  cd -
+  869  sudo pip2 install -r requirements.txt
+  870  sudo su
+  871  ./bin/generate ../Insights --proceedings --overwrite
+  872  vim requirements
+  873  vim requirements.txt 
+  874  pip install Jinja2==3.0.2
+  875  ./bin/generate ../Insights --proceedings --overwrite
+  876  vim requirements-dev.txt 
+  877  vim requirements.txt 
+  878  pip install PyPDF2==1.26.0
+  879  vim requirements.txt 
+  880  pip install PyYAML==5.3.1
+  881  ./bin/generate ../Insights --proceedings --overwrite
+  882  pip install pdflatex
+  883  ./bin/generate ../Insights --proceedings --overwrite
+  884  pip3 install pdflatex
+  885  ./bin/generate ../Insights --proceedings --overwrite
+  886  sudo apt-get install texlive-latex-base
+  887  ./bin/generate ../Insights --proceedings --overwrite
+  888  cd 
+  889  cd Documents/
+  890  ls
+  891  cd aclpub2/
+  892  ./bin/generate ../Insights --proceedings --overwrite
+  893  ps
+  894  ps -elf
+  895  ./bin/generate ../Insights --proceedings --overwrite
+  896  cd 
+  897  cd Documents/
+  898  ls
+  899  rm -rf aclpub2/
+  900  rm -rf Insights/
+  901  git clone https://github.com/rycolab/aclpub2/
+  902  git clone git@github.com:acl-2022/Insights.git
+  903  cd aclpub2/
+  904  export PYTHONPATH=.:$PYTHONPATH
+  905  ./bin/generate ../Insights --proceedings --overwrite
+  906  sudo ./bin/generate ../Insights --proceedings --overwrite
+  907  ./bin/generate ../Insights --proceedings --overwrite
+  908  cd
+  909  cd Documents/
+  910  ls
+  911  cd amazon_alfred_latest/
+  912  ls
+  913  conda info --envs
+  914  conda activate alfred_conda_env
+  915  cd 
+  916  cd Documents/
+  917  ls
+  918  cd aclpub2/
+  919  ./bin/generate ../Insights --proceedings --overwrite
+  920  cd Downloads
+  921  ls
+  922  ./code-server/
+  923  cd ../Doc
+  924  cd
+  925  cd Documents/
+  926  ls
+  927  cd code-server-4.2.0-linux-amd64/
+  928  ls
+  929  ./code-server 
+  930  ./bin/code-server 
+  931  cd ..
+  932  rm -rf Insights/
+  933  git clone git@github.com:acl-2022/Insights.git
+  934  cd Documents/
+  935  ls
+  936  cd aclpub2/
+  937  ./bin/generate ../Insights --proceedings --overwrite
+  938  cd Documents/
+  939  ls
+  940  ls -lh
+  941  conda list --env
+  942  conda list --envs
+  943  conda list envs
+  944  conda info --envs
+  945  conda activate alfred_conda_env
+  946  cd amazon_alfred_latest/
+  947  ls
+  948  cd scripts/
+  949  ls
+  950  cd ..
+  951  ls
+  952  hisory > history_apr_25_2022.txt
+  953  history > history_apr_25_2022.txt

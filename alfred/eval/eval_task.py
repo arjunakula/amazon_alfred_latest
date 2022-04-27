@@ -49,7 +49,7 @@ def evaluate_task(
         dataset, traj_data, traj_key, model.args, extractor)
     task_info = eval_util.read_task_data(traj_data)
 
-    prev_action = None
+    prev_action = Noneamazon_alfred_latest
     t, num_fails, reward = 0, 0, 0
     while t < args.max_steps:
         # get an observation and do an agent step
@@ -59,23 +59,7 @@ def evaluate_task(
         # get rewards
         reward += env.get_transition_reward()[0]
         t += 1
-        # break if stop is predicted or args.max_fails is reached
-        if episode_end:
-            break
-
-    # compute metrics and dump a video
-    success = env.get_goal_satisfied()
-    metrics = compute_metrics(success, reward, traj_data, t, env.get_goal_conditions_met())
-    return dict(**metrics, **task_info)
-
-
-def get_metrics(successes, failures):
-    '''
-    compute overall succcess and goal_condition success rates along with path-weighted metrics
-    '''
-    # stats
-    num_successes, num_failures = len(successes), len(failures)
-    num_evals = len(successes) + len(failures)
+        # break if stop is predicted or args.max_fails is reachedamazon_alfred_latest
     total_path_len_weight = sum([entry['path_len_weight'] for entry in successes]) + \
                             sum([entry['path_len_weight'] for entry in failures])
     completed_goal_conditions = sum([entry['completed_goal_conditions'] for entry in successes]) + \
