@@ -159,6 +159,8 @@ def augment_traj(env, json_file, args, video_saver, render_settings):
     augmented_traj_data['scene']['color_to_object_type'] = color_to_obj_id_type
     augmented_traj_data['task'] = {'rewards': rewards,
                                    'reward_upper_bound': sum(rewards)}
+    #FIXME: POSITION CHECK (save distance between final )
+    # simulator metadata
     # write an updated traj_data.json (updated images, colors and rewards)
     with open(os.path.join(root_dir_to, 'traj_data.json'), 'w') as aj:
         json.dump(augmented_traj_data, aj, sort_keys=True, indent=4)
