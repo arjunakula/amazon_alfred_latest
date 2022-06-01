@@ -28,9 +28,9 @@ def cfg_args():
     # where to load the original ALFRED dataset images and jsons from
     data_input = 'generated_2.1.0'
     # whether to overwrite old data in case it exists
-    overwrite = False
+    overwrite = True
     # number of processes to run the data processing in (0 for main thread)
-    num_workers = 4
+    num_workers = 1
     # debug run with only 16 entries
     fast_epoch = False
 
@@ -38,7 +38,7 @@ def cfg_args():
     # visual archi (resnet18, fasterrcnn, maskrcnn)
     visual_archi = 'fasterrcnn'
     # where to load a pretrained model from
-    visual_checkpoint = None
+    visual_checkpoint = '/home/arjunakula/Documents/amazon_alfred_latest/logs/pretrained/fasterrcnn_model.pth'
     # which images to use (by default: RGBs)
     image_folder = 'raw_images'
     # feature compression
@@ -50,7 +50,7 @@ def cfg_args():
     # generate dataset with subgoal annotations instead of human annotations
     subgoal_ann = False
     # use an existing vocabulary if specified (None for starting from scratch)
-    vocab_path = 'files/base.vocab'
+    vocab_path = '/home/arjunakula/Documents/amazon_alfred_latest/files/human.vocab'
 
 
 def process_feats(traj_paths, extractor, lock, image_folder, save_path):
@@ -200,8 +200,9 @@ def gather_data(output_path, num_workers):
                     link_file = False
             if link_file:
                 path_symlink.symlink_to(path_file)
-
-    partitions = ('train', 'valid_seen', 'valid_unseen')
+    #FIXME:emnlp changes
+    #partitions = ('train', 'valid_seen', 'valid_unseen')
+    partitions = ('valid_seen')
     if not (output_path / '.deleting_worker_dirs').exists():
         for partition in partitions:
             print('Processing {} trajectories'.format(partition))

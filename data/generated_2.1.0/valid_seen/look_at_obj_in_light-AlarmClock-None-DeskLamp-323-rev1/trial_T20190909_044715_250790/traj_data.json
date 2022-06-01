@@ -1656,12 +1656,14 @@
             {
                 "discrete_action": {
                     "action": "GoToLocation",
-                    "args": []
+                    "args": [
+                        "dresser"
+                    ]
                 },
-                "high_idx": 5,
+                "high_idx": 4,
                 "planner_action": {
-                    "action": "End",
-                    "value": 1
+                    "action": "GotoLocation",
+                    "location": "loc|9|6|1|45"
                 }
             },
             {
@@ -1669,7 +1671,7 @@
                     "action": "NoOp",
                     "args": []
                 },
-                "high_idx": 4,
+                "high_idx": 5,
                 "planner_action": {
                     "action": "End",
                     "value": 1
@@ -4035,7 +4037,8 @@
                     "go to the table with the safe ",
                     "pick up the clock",
                     "take the clock to the desk",
-                    "turn on the lamp"
+                    "turn on the lamp",
+                    "Walk back to the left of the dresser"
                 ],
                 "task_desc": "look at the clock under the lamp",
                 "votes": [
@@ -4052,7 +4055,8 @@
                     "Walk ahead and slightly left to the dresser.",
                     "Pick up the alarm clock on the dresser.",
                     "Turn right and walk around the couch, then veer left to the desk.",
-                    "Turn on the desk lamp."
+                    "Turn on the desk lamp.",
+                    "Walk back to the left of the dresser"
                 ],
                 "task_desc": "Look at an alarm clock by the light of a lamp.",
                 "votes": [
@@ -4069,7 +4073,8 @@
                     "Walk straight ahead to the dresser.",
                     "Pick up the alarm clock on the dresser.",
                     "Turn right and walk past the couch to the desk.",
-                    "Turn on the desk lamp."
+                    "Turn on the desk lamp.",
+                    "Walk back to the left of the dresser"
                 ],
                 "task_desc": "Look at an alarm clock by the light of a lamp.",
                 "votes": [
