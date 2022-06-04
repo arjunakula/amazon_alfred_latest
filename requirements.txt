@@ -14,7 +14,7 @@ gtimer
 filelock
 networkx
 termcolor
-torch==1.7.1
-torchvision==0.8.2
+torch==1.7.0
+torchvision==0.8.1
 tensorboardX==1.8
 ai2thor==2.1.0

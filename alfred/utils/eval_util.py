@@ -327,7 +327,10 @@ def load_language(
         feat_args = (task, subgoal_idx, subgoal_idx + 1)
     else:
         feat_args = (task,)
-    feat_numpy = dataset.load_features(*feat_args)
+
+    #FIXME:emnlp
+    #feat_numpy = dataset.load_features(*feat_args)
+    feat_numpy = dataset.load_features(task)
     # test extractor with the frames
     if not test_split:
         frames_expert = dataset.load_frames(dataset_key)

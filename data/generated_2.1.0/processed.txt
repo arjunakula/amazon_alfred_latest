@@ -1,2 +1,0 @@
-valid_seen/look_at_obj_in_light-AlarmClock-None-DeskLamp-323/trial_T20190909_044715_250790/traj_data.json;1
-valid_seen/look_at_obj_in_light-AlarmClock-None-DeskLamp-323-rev1/trial_T20190909_044715_250790/traj_data.json;1
