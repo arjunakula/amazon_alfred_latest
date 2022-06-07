@@ -24,13 +24,13 @@ ex = Experiment('create_data', ingredients=[args_ingredient])
 @args_ingredient.config
 def cfg_args():
     # name of the output dataset
-    data_output = 'lmdb_2.1.0'
+    data_output = 'lmdb_2.1.0_unseen'
     # where to load the original ALFRED dataset images and jsons from
     data_input = 'generated_2.1.0'
     # whether to overwrite old data in case it exists
     overwrite = True
     # number of processes to run the data processing in (0 for main thread)
-    num_workers = 1
+    num_workers = 8
     # debug run with only 16 entries
     fast_epoch = False
 
@@ -202,7 +202,7 @@ def gather_data(output_path, num_workers):
                 path_symlink.symlink_to(path_file)
     #FIXME:emnlp changes
     #partitions = ('train', 'valid_seen', 'valid_unseen')
-    partitions = ('valid_seen')
+    partitions = ['valid_unseen']
     if not (output_path / '.deleting_worker_dirs').exists():
         for partition in partitions:
             print('Processing {} trajectories'.format(partition))

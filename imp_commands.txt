@@ -1,1 +1,2 @@
+cd ~
 source alfred_env/bin/activate

@@ -101,7 +101,7 @@ class BaseDataset(TorchDataset):
         '''
         database = lmdb.open(
             lmdb_path, readonly=True,
-            lock=False, readahead=False, meminit=False, max_readers=252)
+            lock=False, readahead=False, meminit=False, max_readers=2048)
         cursor = database.begin(write=False)
         return database, cursor
 
