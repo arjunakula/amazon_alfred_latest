@@ -6,6 +6,7 @@ from alfred.env.reward import get_action
 from alfred.gen import constants
 from alfred.gen.graph import graph_obj
 from alfred.gen.utils import game_util
+from math import sqrt
 
 class BaseTask(object):
     '''
@@ -156,10 +157,57 @@ class PickAndPlaceSimpleTask(BaseTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    #FIXME: emnlp
     def goal_satisfied(self, state):
-        # check if any object of 'object' class is inside any receptacle of 'parent' class
-        pcs = self.goal_conditions_met(state)
-        return pcs[0] == pcs[1]
+        
+        if 'alfredl_task_type' not in self.traj:
+            pcs = self.goal_conditions_met(state)
+            return pcs[0] == pcs[1]
+
+        else:
+            if self.traj['alfredl_task_type'] == 'nav':
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            elif self.traj['alfredl_task_type'] == 'rev1':
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            else:
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
 
     def goal_conditions_met(self, state):
         ts = 1
@@ -196,10 +244,57 @@ class PickTwoObjAndPlaceTask(BaseTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    #FIXME: emnlp
     def goal_satisfied(self, state):
-        # check if two objects of 'object' class are in any receptacle of 'parent' class
-        pcs = self.goal_conditions_met(state)
-        return pcs[0] == pcs[1]
+        
+        if 'alfredl_task_type' not in self.traj:
+            pcs = self.goal_conditions_met(state)
+            return pcs[0] == pcs[1]
+
+        else:
+            if self.traj['alfredl_task_type'] == 'nav':
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            elif self.traj['alfredl_task_type'] == 'rev1':
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            else:
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
 
     def goal_conditions_met(self, state):
         ts = 2
@@ -235,10 +330,59 @@ class LookAtObjInLightTask(BaseTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+
+    #FIXME: emnlp
     def goal_satisfied(self, state):
-        # check if any object of 'object' class is being held in front of 'toggle' object that is turned on
-        pcs = self.goal_conditions_met(state)
-        return pcs[0] == pcs[1]
+        
+        if 'alfredl_task_type' not in self.traj:
+            pcs = self.goal_conditions_met(state)
+            return pcs[0] == pcs[1]
+
+        else:
+            if self.traj['alfredl_task_type'] == 'nav':
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            elif self.traj['alfredl_task_type'] == 'rev1':
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            else:
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
 
     def goal_conditions_met(self, state):
         ts = 2
@@ -278,10 +422,58 @@ class PickHeatThenPlaceInRecepTask(BaseTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    #FIXME: emnlp
     def goal_satisfied(self, state):
-        # check if any object of 'object' class inside receptacle of 'parent' class is hot
-        pcs = self.goal_conditions_met(state)
-        return pcs[0] == pcs[1]
+        
+        if 'alfredl_task_type' not in self.traj:
+            pcs = self.goal_conditions_met(state)
+            return pcs[0] == pcs[1]
+
+        else:
+            if self.traj['alfredl_task_type'] == 'nav':
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            elif self.traj['alfredl_task_type'] == 'rev1':
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            else:
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
 
     def goal_conditions_met(self, state):
         ts = 3
@@ -327,10 +519,57 @@ class PickCoolThenPlaceInRecepTask(BaseTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    #FIXME: emnlp
     def goal_satisfied(self, state):
-        # check if any object of 'object' class inside receptacle of 'parent' class is cold
-        pcs = self.goal_conditions_met(state)
-        return pcs[0] == pcs[1]
+        
+        if 'alfredl_task_type' not in self.traj:
+            pcs = self.goal_conditions_met(state)
+            return pcs[0] == pcs[1]
+
+        else:
+            if self.traj['alfredl_task_type'] == 'nav':
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            elif self.traj['alfredl_task_type'] == 'rev1':
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            else:
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
 
     def goal_conditions_met(self, state):
         ts = 3
@@ -375,10 +614,57 @@ class PickCleanThenPlaceInRecepTask(BaseTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    #FIXME: emnlp
     def goal_satisfied(self, state):
-        # check if any object of 'object' class inside receptacle of 'parent' class is clean
-        pcs = self.goal_conditions_met(state)
-        return pcs[0] == pcs[1]
+        
+        if 'alfredl_task_type' not in self.traj:
+            pcs = self.goal_conditions_met(state)
+            return pcs[0] == pcs[1]
+
+        else:
+            if self.traj['alfredl_task_type'] == 'nav':
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            elif self.traj['alfredl_task_type'] == 'rev1':
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            else:
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
 
     def goal_conditions_met(self, state):
         ts = 3
@@ -423,10 +709,57 @@ class PickAndPlaceWithMovableRecepTask(BaseTask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    #FIXME: emnlp
     def goal_satisfied(self, state):
-        # check if any object of 'object' class is inside any movable receptacle of 'mrecep' class at receptacle of 'parent' class
-        pcs = self.goal_conditions_met(state)
-        return pcs[0] == pcs[1]
+        
+        if 'alfredl_task_type' not in self.traj:
+            pcs = self.goal_conditions_met(state)
+            return pcs[0] == pcs[1]
+
+        else:
+            if self.traj['alfredl_task_type'] == 'nav':
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            elif self.traj['alfredl_task_type'] == 'rev1':
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
+
+            else:
+                pcs = self.goal_conditions_met(state)
+                if pcs[0] != pcs[1]:
+                    return False
+                
+                goal_x, goal_y = self.traj['expected_final_pos'].strip().split("|")
+                cur_x, cur_y = self.env.last_event.metadata['agent']['position']['x'], self.env.last_event.metadata['agent']['position']['z'] 
+
+                goal_x = float(goal_x)*constants.AGENT_STEP_SIZE
+                goal_y = float(goal_y)*constants.AGENT_STEP_SIZE
+                goal_distance = sqrt((goal_x-cur_x)**2 + (goal_y-cur_y)**2)
+                if goal_distance > constants.VISIBILITY_DISTANCE:
+                    return False
+
+                return True
 
     def goal_conditions_met(self, state):
         ts = 3

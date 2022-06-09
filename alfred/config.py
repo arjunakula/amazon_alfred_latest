@@ -19,7 +19,9 @@ def cfg_exp():
     # which device to use
     device = 'cuda'
     # number of data loading workers or evaluation processes (0 for main thread)
-    num_workers = 12
+    #FIXME: emnlp
+    #num_workers = 12
+    num_workers = 1
     # we can fine-tune a pre-trained model
     pretrained_path = None
     # run the code on a small chunk of data
@@ -30,7 +32,7 @@ def cfg_exp():
         # dataset name(s) for training and validation
         'train': None,
         # additional dataset name(s) can be specified for validation only
-        'valid': '',
+        'valid': 'lmdb_human',
         # specify the length of each dataset
         'length': 30000,
         # what to use as annotations: {'lang', 'lang_frames', 'frames'}
@@ -41,9 +43,9 @@ def cfg_exp():
 @eval_ingredient.config
 def cfg_eval():
     # which experiment to evaluate (required)
-    exp = None
+    exp = 'pretrained'
     # which checkpoint to load ('latest.pth', 'model_**.pth')
-    checkpoint = 'latest.pth'
+    checkpoint = 'et_human_pretrained.pth'
     # which split to use ('train', 'valid_seen', 'valid_unseen')
     split = 'valid_seen'
     # shuffle the trajectories
@@ -66,9 +68,10 @@ def cfg_eval():
     x_display = '0'
     # range of checkpoints to evaluate, (9, 20, 2) means epochs 9, 11, 13, 15, 17, 19
     # if None, only 'latest.pth' will be evaluated
-    eval_range = (9, 20, 1)
+    #FIXME: emnlp
+    eval_range = None
     # object predictor path
-    object_predictor = None
+    object_predictor = '/home/arjunakula/amazon_alfred_latest/logs/pretrained/maskrcnn_model.pth'
 
 
 @train_ingredient.config

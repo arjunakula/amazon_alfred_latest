@@ -9,6 +9,7 @@ from alfred.gen.utils import bb_util
 from alfred.gen.utils import game_util
 
 
+
 class TaskGameStateFullKnowledge(TaskGameState):
     def __init__(self, env, seed=None, action_space=None):
         super(TaskGameStateFullKnowledge, self).__init__(env, seed, action_space)
