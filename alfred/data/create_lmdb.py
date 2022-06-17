@@ -204,7 +204,7 @@ def gather_data(output_path, num_workers):
                 path_symlink.symlink_to(path_file)
     #FIXME:emnlp changes
     #partitions = ('train', 'valid_seen', 'valid_unseen')
-    partitions = ['valid_seen']
+    partitions = ['valid_seen', 'valid_unseen']
     if not (output_path / '.deleting_worker_dirs').exists():
         for partition in partitions:
             print('Processing {} trajectories'.format(partition))

@@ -41,12 +41,18 @@ class GotoLocationAction(BaseAction):
         reward = (prev_distance - curr_distance) * 0.2 # distance reward factor?
 
         # Consider navigation a success if we can see the target object in the next step from here.
-        assert len(expert_plan) > goal_idx + 1
-        next_subgoal = expert_plan[goal_idx + 1]['planner_action']
-        next_goal_object = game_util.get_object(
-            next_subgoal['objectId'], state.metadata)
-        done = next_goal_object['visible'] and curr_distance < self.rewards['min_reach_distance']
-
+        #FIXME: emnlp
+        #assert len(expert_plan) > goal_idx + 1
+        if len(expert_plan) > goal_idx + 1 and 'objectId' in expert_plan[goal_idx + 1]['planner_action']:
+            next_subgoal = expert_plan[goal_idx + 1]['planner_action']
+            next_goal_object = game_util.get_object(
+                next_subgoal['objectId'], state.metadata)
+            done = next_goal_object['visible'] and curr_distance < self.rewards['min_reach_distance']
+        else:
+            if curr_distance < self.rewards['min_reach_distance']:
+                done = True
+            else:
+                done = False
         if done:
             reward += self.rewards['positive']
 

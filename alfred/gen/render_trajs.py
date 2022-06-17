@@ -79,9 +79,12 @@ def augment_traj(env, json_file, args, video_saver, render_settings):
         traj_data = json.load(f)
     # remember images corresponding to low-level actions and create a fresh list
     action_images_orig = [None] * len(traj_data['plan']['low_actions'])
-    for image_dict in traj_data['images']:
-        if action_images_orig[image_dict['low_idx']] is None:
-            action_images_orig[image_dict['low_idx']] = image_dict
+    try:
+        for image_dict in traj_data['images']:
+            if action_images_orig[image_dict['low_idx']] is None:
+                action_images_orig[image_dict['low_idx']] = image_dict
+    except:
+        print(1)
     traj_data['images'] = list()
 
     root_dir_to, rendered_images_dir, save_settings = augment_util.prepare_for_traj(
